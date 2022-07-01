@@ -13,7 +13,7 @@ function AppWraper({navigation}) {
     const mails=["s@gmail.com","k@gmail.com","m@gmail.com","c@gmail.com"]
   
     const addEmail=()=>{
-        dispatch(setEmail(mails[0]))   
+        dispatch(setEmail(mails))   
     }
     
   
