@@ -1,18 +1,9 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AppWraper from './AppWraper';
+import NxtScreen from './NxtScreen';
 
-const NxtScreen=()=>{
-    return(
-        <View style={{alignItems:"center",justifyContent:'center'}}>
-            <Text>
-                Hello
-            </Text>
-        </View>
-    )
-}
 const Stack = createNativeStackNavigator();
 
 function Navigation() {
