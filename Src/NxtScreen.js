@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text,Button,ScrollView} from 'react-native';
 import { useDispatch,useSelector } from "react-redux";
 import { setName } from './redux/actions';
@@ -71,27 +71,34 @@ const persons = [
 ];
 
 const NxtScreen=()=>{
+    const [ivalue,setIvalue]=useState(0);
     const dispatch=useDispatch();
     const a=()=>{
         persons.map((person)=>{
             dispatch(setName(person.name));
         })
-      
     }
     const b=()=>{
       dispatch(removeName());
     }
+    const c=()=>{
+        if (ivalue<=persons.length){
+            setIvalue(ivalue+1);
+        }
+        
+    }
+
     const storeData = useSelector(state => state);
       const names=storeData.userReducer.name;
-      console.log(names)
+      console.log(ivalue)
     return(
         <ScrollView>
             <View style={{flex:1,alignItems:"center",justifyContent:'center'}}>
                 <Text >
-                    {names}
+                    {names[ivalue]}
                 </Text>
                 <View style={{marginTop:15,}}>
-                <Button onPress={a} title="AddName">
+                <Button onPress={()=>{a();c()}} title="AddName">
                 </Button>
                 </View>
                 <View style={{marginTop:15,}}>
