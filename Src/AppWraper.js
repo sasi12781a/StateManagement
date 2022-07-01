@@ -15,8 +15,12 @@ function AppWraper({navigation}) {
       dispatch(setEmail("s@gmail.com"))
     }
   
+    const changeEmail=()=>{
+      dispatch(setEmail("sasi.@gmail.com"))
+    }
+
     const removeEmail=()=>{
-      dispatch(setEmail(""))
+        dispatch(setEmail(''))
     }
     var state = store.getState();
     console.log(state);
@@ -30,7 +34,12 @@ function AppWraper({navigation}) {
             </Button>
         </View>
         <View style={{marginTop:20}}>
-            <Button  title="RemoveEmail" onPress={removeEmail}>
+            <Button  title="ChangeEmail" onPress={changeEmail}>
+            </Button>
+        </View>
+
+        <View style={{marginTop:20}}>
+            <Button  title="Remove email" onPress={removeEmail}>
             </Button>
         </View>
         <View style={{marginTop:20}} >
