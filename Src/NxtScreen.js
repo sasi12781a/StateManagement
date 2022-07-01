@@ -74,9 +74,7 @@ const NxtScreen=()=>{
     const [ivalue,setIvalue]=useState(0);
     const dispatch=useDispatch();
     const a=()=>{
-        persons.map((person)=>{
-            dispatch(setName(person.name));
-        })
+        dispatch(setName(persons[ivalue].name));
     }
     const b=()=>{
       dispatch(removeName());
