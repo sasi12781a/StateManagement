@@ -1,19 +1,18 @@
 import {
   SET_USER_Email,
-  SET_USER_Name,
+  REMOVE_USER_Email,
 } from './actions';
 
 const initialState = {
-  email: '',
-  name:'',
+  email: [],
 };
 
 function userReducer(state = initialState, action) {
   switch (action.type) {
     case SET_USER_Email:
-      return {...state, email: action.payload};
-    case SET_USER_Name:
-      return{...state,name:action.payload};
+      return {...state, email:[...state.email,action.payload] };
+    case REMOVE_USER_Email:
+      return{...state,email:[...state.email.pop()]}
     default:
       return state;
   }

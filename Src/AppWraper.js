@@ -4,24 +4,27 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setEmail } from "./redux/actions";
 import { store } from "./redux/store";
-
+import { removeEmail } from "./redux/actions";
 
 function AppWraper({navigation}) {
     const dispatch=useDispatch();
     const storeData = useSelector(state => state);
     const email=storeData.userReducer.email;
+    const mails=["s@gmail.com","k@gmail.com","m@gmail.com","c@gmail.com"]
   
     const addEmail=()=>{
-      dispatch(setEmail("s@gmail.com"))
+        dispatch(setEmail(mails[0]))   
     }
+    
   
     const changeEmail=()=>{
       dispatch(setEmail("sasi.@gmail.com"))
     }
 
-    const removeEmail=()=>{
-        dispatch(setEmail(''))
+    const rEmail=()=>{
+        dispatch(removeEmail())  
     }
+    
     var state = store.getState();
     console.log(state);
     return (
@@ -39,7 +42,7 @@ function AppWraper({navigation}) {
         </View>
 
         <View style={{marginTop:20}}>
-            <Button  title="Remove email" onPress={removeEmail}>
+            <Button  title="Remove email" onPress={rEmail}>
             </Button>
         </View>
         <View style={{marginTop:20}} >
