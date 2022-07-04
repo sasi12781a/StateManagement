@@ -10,7 +10,7 @@ import Navigation from "./Src/Navigation";
 const App=()=>{
   return(
     <Provider store={store}>
-      <PersistGate loading={<Text>Loading...</Text>} persistor={persistor}>
+      <PersistGate loading={<Text>Loading</Text>} persistor={persistor}>
           <Navigation/>
       </PersistGate>
     </Provider>
