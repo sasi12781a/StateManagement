@@ -9,7 +9,7 @@ import { removeName } from './redux/actions';
 const persons = [
     {
       id: "1",
-      name: "Earnest",
+      name: "Earnest Green",
     },
     {
       id: "2",
