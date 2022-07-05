@@ -89,22 +89,20 @@ const NxtScreen=()=>{
     const storeData = useSelector(state => state);
       const names=storeData.userReducer.name;
       console.log(ivalue)
-    return(
-        <ScrollView>
-            <View style={{flex:1,alignItems:"center",justifyContent:'center'}}>
-                <Text >
-                    {names[ivalue]}
-                </Text>
-                <View style={{marginTop:15,}}>
-                <Button onPress={()=>{a();c()}} title="AddName">
-                </Button>
-                </View>
-                <View style={{marginTop:15,}}>
-                <Button onPress={b} title="RemoveName">
-                </Button>
-                </View>
-            </View>
-        </ScrollView>
+    return(  
+      <View style={{flex:1,alignItems:"center",justifyContent:'center'}}>
+          <Text >
+              {names[ivalue]}
+          </Text>
+          <View style={{marginTop:15,}}>
+          <Button onPress={()=>{a();c()}} title="AddName">
+          </Button>
+          </View>
+          <View style={{marginTop:15,}}>
+          <Button onPress={b} title="RemoveName">
+          </Button>
+          </View>
+      </View>
     )
 }
 
