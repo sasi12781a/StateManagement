@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import {Text,View,Button} from "react-native";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -8,12 +8,20 @@ import { removeEmail } from "./redux/actions";
 
 function AppWraper({navigation}) {
     const dispatch=useDispatch();
+    const [ivalue,setIvalue]=useState(0);
     const storeData = useSelector(state => state);
     const email=storeData.userReducer.email;
     const mails=["s@gmail.com","k@gmail.com","m@gmail.com","c@gmail.com"]
   
     const addEmail=()=>{
-        dispatch(setEmail(mails))   
+      dispatch(setEmail(mails[ivalue]))
+    
+    }
+
+    const index=()=>{
+      if (ivalue<=mails.length){
+          setIvalue(ivalue+1);
+      }
     }
     
   
@@ -33,7 +41,7 @@ function AppWraper({navigation}) {
           {email}
         </Text>
         <View style={{marginTop:20}}>
-            <Button  title="AddEmail" onPress={addEmail}>
+            <Button  title="AddEmail" onPress={()=>{addEmail();index()}}>
             </Button>
         </View>
         <View style={{marginTop:20}}>

@@ -17,7 +17,7 @@ export const setName= name => dispatch =>{
     })
 }
 
-export const removeEmail= ()=>dispatch=>{
+export const removeEmail=()=>dispatch=>{
     dispatch({
         type:REMOVE_USER_Email,
         payload:[],

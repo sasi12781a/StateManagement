@@ -4,8 +4,6 @@ import { useDispatch,useSelector } from "react-redux";
 import { setName } from './redux/actions';
 import { removeName } from './redux/actions';
 
-
-
 const persons = [
     {
       id: "1",
